@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper,notitlepage]{article}
+
+\usepackage[margin=4cm]{geometry}
+\usepackage[none]{hyphenat}
+\usepackage{datetime}
+\usepackage{graphicx}
+
+\usepackage{fontspec}
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{PinyonScript}[
+    Path = ../../font/p/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Roboto}[
+    Path = ../../font/r/,
+    Extension = .ttf,
+    UprightFont = *-Medium,
+    Scale=1,
+    Ligatures=TeX
+]
+
+\setmainfont{Tinos}
+\pagenumbering{gobble}
+
+% For dummy filler text only!
+\usepackage{lipsum}
+
+\newcommand{\head}[1]{\fontspec{Roboto}\Large{#1}\latintext}
+
+\newdate{date}{31}{5}{2024} % DAY, MONTH, YEAR
+\date{\displaydate{date}}
+
+% Document
+\begin{document}
+
+    \begin{center}\huge{\fontspec{Roboto}Kristoffer Paulsson}\end{center}
+    \begin{center}\bigger{\fontspec{Roboto}Slottskapellet \textbullet~Finspång, Sweden \textbullet~+46 (0)76-753 42 20}\end{center}
+    \bigskip
+    \bigskip
+    \bigskip
+    \bigskip
+    \displaydate{date}
+    \bigskip \\ \\ % Title and/or name
+    Bishop Mathew Owuor Ongere
+    \bigskip \\ % Address of ministry/church etc
+    Hope of Salvation Ministries \\
+    P O Box 4928 -- Eldoret \\
+    30100 \\
+    Eldoret \\
+    Kenya
+    \bigskip \\ % Cellphone and email address at newline
+    +254 711 625659 \\
+    hope4salvation1@yahoo.com
+    \bigskip \\ \\ % Greeting
+    Dear bishop Mathew!
+    \bigskip \\ % Invitation and formalia
+    We are pleased to formally invite you as a speaker at our conference near Slottskapellet in Finspång, Sweden,
+    for a period of four (4) days, between 2024-06-26 and 2024-06-30. \\
+    We welcome you with a sincere love from our hearts, wishing that you will have a pleasant time with us in our country.
+    Welcoming you to our region, country, city and church. We will accomodate you with housing and meals, with
+    transport to and from the airport, conference and place of stay.
+    \bigskip \\ \\
+    Wishes and greetings in God
+    \bigskip \\ \\
+    \begin{minipage}{ 6cm }
+        \bigskip
+        \hrulefill \\
+        Kristoffer Paulsson
+    \end{minipage}
+
+\end{document}
