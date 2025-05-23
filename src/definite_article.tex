@@ -1,0 +1,76 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt]{memoir}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{float}
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{fontspec}
+\usepackage{makecell}
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+%\setromanfont{Tinos}
+
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{1.3em}
+\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
+
+% Document
+\begin{document}
+
+    \section*{Koine Greek Article}
+
+    ``\textbf{1099.} The article \grc{ὁ}\fontspec{}, \grc{ἡ}\fontspec{}, \grc{τό}\fontspec{}, was originally a demonstrative pronoun, and as such supplied the place of the personal pronoun of the third person. \dots''
+    \linkfoot{Article}{https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0007:part=4:chapter=40}{2025-05-22}
+
+    \begin{table}[H]
+        \begin{tabular}{c|ccc}
+            \textbf{Inflection} & \textbf{Masc} & \textbf{Fem} & \textbf{Neu} \\
+            \hline
+            \emph{\tsc{Singular}} \\
+            \tsc{Nom} & \makecell{\grc{ὁ} \trc{ho} } & \makecell{\grc{ἡ} \trc{hē} } & \makecell{\grc{τό} \trc{to} } \\
+            \tsc{Gen} & \makecell{\grc{τοῦ} \trc{tou} } & \makecell{\grc{τῆς} \trc{tēs} } & \makecell{\grc{τοῦ} \trc{tou} } \\
+            \tsc{Dat} & \makecell{\grc{τῷ} \trc{tōi} } & \makecell{\grc{τῇ} \trc{tēi} } & \makecell{\grc{τῷ} \trc{tōi} } \\
+            \tsc{Acc} & \makecell{\grc{τόν} \trc{ton} } & \makecell{\grc{τήν} \trc{tēn} } & \makecell{\grc{τό} \trc{to} } \\
+            \hline
+            \emph{\tsc{Dual}} \\
+            \tsc{Nom/Acc} & \makecell{\grc{τώ} \trc{tō} } & \makecell{\grc{τώ} \trc{tō} } & \makecell{\grc{τώ} \trc{tō} } \\
+            \tsc{Dat/Gen} & \makecell{\grc{τοῖν} \trc{toin} } & \makecell{\grc{τοῖν} \trc{toin} } & \makecell{\grc{τοῖν} \trc{toin} } \\
+            \hline
+            \emph{\tsc{Plural}} \\
+            \tsc{Nom} & \makecell{\grc{οἱ} \trc{hoi} } & \makecell{\grc{αἱ} \trc{hai} } & \makecell{\grc{τά} \trc{ta} } \\
+            \tsc{Gen} & \makecell{\grc{τῶν} \trc{tōn} } & \makecell{\grc{τῶν} \trc{tōn} } & \makecell{\grc{τῶν} \trc{tōn} } \\
+            \tsc{Dat} & \makecell{\grc{τοῖς} \trc{tois} } & \makecell{\grc{ταῖς} \trc{tais} } & \makecell{\grc{τοῖς} \trc{tois} } \\
+            \tsc{Acc} & \makecell{\grc{τούς} \trc{tous} } & \makecell{\grc{τᾱ́ς} \trc{tas} } & \makecell{\grc{τά} \trc{ta} } \\
+        \end{tabular}
+                \caption{Greek (definite) Articles from Wikipedia, with enhancements.}
+
+    \end{table}
+\end{document}

@@ -1,0 +1,80 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt]{memoir}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{float}
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{fontspec}
+\usepackage{makecell}
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+%\setromanfont{Tinos}
+
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{1.3em}
+\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
+
+% Document
+\begin{document}
+
+    \section*{Koine Greek Indefinite Relative Pronouns}
+
+    ``The indefinite or general relative pronoun \grc{ὅστις}\fontspec{}, \grc{ἥτις}\fontspec{}, \grc{ὅτι} \fontspec{} whoever (any-who, any-which), \emph{any one who, whatever}, \textit{anything which}, inflects each part (\grc{ὅς} \fontspec{} and \grc{τὶς}\fontspec{}) separately.''
+    \linkfoot{Smyth §339}{https://www.perseus.tufts.edu/hopper/text?doc=Perseus\%3Atext\%3A1999.04.0007\%3Apart\%3D2\%3Achapter\%3D15}{2025-05-14}
+
+    The following table contains indefinite relative pronouns described with natural gender, a common use is grammatical gender, which currently isn't included.
+    Therefore the word man/men refers to male agent(s), and woman/women refers to a female agent(s).
+
+    Greek pronouns used in Homeric and other kind of prose excluded from the table.
+
+    \begin{table}[H]
+        \begin{tabular}{c|ccc}
+            \textbf{Inflection} & \textbf{Masc} & \textbf{Fem} & \textbf{Neu} \\
+            \hline
+            \emph{\tsc{Singular}} \\
+            \tsc{Nom} & \makecell{\grc{ὅστις} \trc{hostis} \\ \small any man who} & \makecell{\grc{ἥτις} \trc{hētis} \\ \small any woman who } & \makecell{\grc{ὅτι} \trc{hoti} \\ \small whoever} \\
+            \tsc{Gen} & \makecell{\grc{οὗτινος} \trc{houtinos} \\ \small any man whose} & \makecell{\grc{ἧστινος} \trc{hēstinos} \\ \small any woman whose} & \makecell{\grc{οὗτινος} \trc{houtinos} \\ \small whosever } \\
+            \tsc{Dat} & \makecell{\grc{ᾧτινι} \trc{hōitini} \\ \small any man whom } & \makecell{\grc{ᾗτινι} \trc{hēitini} \\ \small any woman whom} & \makecell{\grc{ᾧτινι} \trc{hōitini} \\ \small whomever} \\
+            \tsc{Acc} & \makecell{\grc{ὅντινα} \trc{hontina} \\ \small any man whom} & \makecell{\grc{ἥντινα} \trc{hēntina} \\ \small any woman whom} & \makecell{\grc{ὅτι} \trc{hoti} \\ \small whomever} \\
+            \hline
+            \emph{\tsc{Dual}} \\
+            \tsc{Nom/Acc} & \makecell{\grc{ὥτινε} \trc{hōtine} \\ \small any two men who(m)} & \makecell{\grc{ὥτινε} \trc{hōtine} \\ \small any two women who(m)} & \makecell{\grc{ὥτινε} \trc{hōtine} \\ \small any two who(m)} \\
+            \tsc{Dat/Gen} & \makecell{\grc{οἷντινοιν} \trc{hointinoin} \\ \small any two men who(m/se)} & \makecell{\grc{οἷντινοιν} \trc{hointinoin} \\ \small any two women who(m/se)} & \makecell{\grc{οἷντινοιν} \trc{hointinoin} \\ \small any two who(m/se)} \\
+            \hline
+            \emph{\tsc{Plural}} \\
+            \tsc{Nom} & \makecell{\grc{οἵτινες} \trc{hoitines} \\ \small any men who} & \makecell{\grc{αἵτινες} \trc{haitines} \\ \small any women who} & \makecell{\grc{ἅτινα} \trc{hatina} \\ \small those who} \\
+            \tsc{Gen} & \makecell{\grc{ὧντινων} \trc{hōntinōn} \\ \small any men whose} & \makecell{\grc{ὧντινων} \trc{hōntinōn} \\ \small any women whose} & \makecell{\grc{ὧντινων} \trc{hōntinōn} \\ \small those whose} \\
+            \tsc{Dat} & \makecell{\grc{οἷστισι(ν)} \trc{hoistisi(n)} \\ \small any men whom} & \makecell{\grc{αἷστισι(ν)} \trc{haistisi(n)}\\ \small the women whom} & \makecell{\grc{οἷστισι(ν)} \trc{hoistisi(n)} \\ \small those whom} \\
+            \tsc{Acc} & \makecell{\grc{οὕστινας} \trc{houstinas} \\ \small any men whom} & \makecell{\grc{ἅστινας} \trc{hastinas} \\ \small any women whom} & \makecell{\grc{ἅτινα} \trc{hatina} \\ \small those whom} \\
+        \end{tabular}
+        \caption{Relative pronouns as Smyth §339, p. 97, with enhancements.}
+    \end{table}
+\end{document}

@@ -1,0 +1,89 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt]{memoir}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{float}
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{fontspec}
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+%\setromanfont{Tinos}
+
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+
+\renewcommand{\arraystretch}{1.3}
+
+% Document
+\begin{document}
+
+    \section*{Koine Greek Pronouns}
+    Here is a complete unverified list of all accessible \em articles \normal of the Koine language.
+
+    %
+    % τῇ (tēi) DAT-FEM-SG
+    % τούς (tous) ACC-MASC-PL
+    % τά (ta) VOC-NEU-PL, NOM-NEU-PL, ACC-NEU-PL
+    % τοῦ (tou) GEN-MASC-SG, GEN-NEU-SG
+    % τῶν (tōn) GEN-MASC-PL, GEN-FEM-PL, GEN-NEU-PL
+    % τῷ (tōi) DAT-MASC-SG, DAT-NEU-SG
+    % τήν (tēn) ACC-FEM-SG
+    % οἱ (hoi) VOC-MASC-PL, NOM-MASC-PL
+    % αἱ (hai) VOC-FEM-PL, NOM-FEM-PL
+    % τοῖν (toin) GEN-MASC-DU, DAT-MASC-DU, GEN-FEM-DU, DAT-FEM-DU, GEN-NEU-DU, DAT-NEU-DU
+    % ἡ (hē) NOM-FEM-SG
+    % τώ (tō) NOM-MASC-DU, ACC-MASC-DU, NOM-FEM-DU, ACC-FEM-DU, NOM-NEU-DU, ACC-NEU-DU
+    % τοῖς (tois) DAT-MASC-PL, DAT-NEU-PL
+    % τό (to) NOM-NEU-SG, ACC-NEU-SG
+    % τάς (tas) ACC-FEM-PL
+    % τῆς (tēs) GEN-FEM-SG
+    % ταῖς (tais) DAT-FEM-PL
+    % ὁ (ho) NOM-MASC-SG
+    % τόν (ton) ACC-MASC-SG
+    %
+
+    \begin{table}[H]
+        \begin{tabular}{c|ccc}
+            \textbf{Num \& Case} & \textbf{\tsc{Masc}} & \textbf{\tsc{Fem}} & \textbf{\tsc{Neu}} \\
+            \hline
+            \tsc{Sg} \\
+            \tsc{Nom} \\
+            \tsc{Acc} \\
+            \tsc{Voc} \\
+            \tsc{Dat} \\
+            \tsc{Gen} \\
+            \hline
+            \tsc{Du} \\
+            \tsc{Nom/Acc/Voc} \\
+            \tsc{Dat/Gen} \\
+            \hline
+            \tsc{Pl} \\
+            \tsc{Nom/Voc} \\
+            \tsc{Acc} \\
+            \tsc{Dat} \\
+            \tsc{Gen} \\
+        \end{tabular}
+        \caption{Articles according to their multiple functions.}
+    \end{table}
+\end{document}

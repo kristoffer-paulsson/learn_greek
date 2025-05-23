@@ -1,0 +1,75 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt]{memoir}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{float}
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{fontspec}
+\usepackage{makecell}
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+%\setromanfont{Tinos}
+
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{1.3em}
+\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
+
+% Document
+\begin{document}
+
+    \section*{Koine Greek Personal Pronouns Third Person}
+
+    ``Third-person pronouns are words such as `she,' `it,' and `they' that are used to refer to other people and things that are not being directly addressed, without naming them specifically with a noun.''
+    \linkfoot{Third-Person Pronouns}{https://www.scribbr.com/academic-writing/third-person-pronouns/}{2025-05-13}
+
+    \begin{table}[H]
+        \begin{tabular}{c|ccc}
+            \textbf{Inflection} & \textbf{Masc} & \textbf{Fem} & \textbf{Neu} \\
+            \hline
+            \emph{\tsc{Singular}} \\
+            \tsc{Nom} & \makecell{\grc{αὐτός} \trc{autos} \\ \small he} & \makecell{\grc{αὐτή} \trc{autē} \\ \small she} & \makecell{\grc{αὐτό} \trc{auto} \\ \small it, one} \\
+            \tsc{Gen} & \makecell{\grc{αὐτοῦ} \trc{autou} \\ \small his} & \makecell{\grc{αὐτῆς} \trc{autēs} \\ \small hers} & \makecell{\grc{αὐτοῦ} \trc{autou} \\ \small its, one's} \\
+            \tsc{Dat} & \makecell{\grc{αὐτῷ} \trc{autōi} \\ \small him \\ \small himself} & \makecell{\grc{αὐτῇ} \trc{autēi} \\ \small her \\ \small herself} & \makecell{\grc{αὐτῷ} \trc{autōi} \\ \small it, itself \\ \small one, oneself} \\
+            \tsc{Acc} & \makecell{\grc{αὐτόν} \trc{auton} \\ \small him} & \makecell{\grc{αὐτήν} \trc{autēn} \\ \small her} & \makecell{\grc{αὐτό} \trc{auto} \\ \small it, one} \\
+            \hline
+            \emph{\tsc{Dual}} \\
+            \tsc{Nom/Acc} & \makecell{\grc{αὐτώ} \trc{autō} \\ \small both men} & \makecell{\grc{αὐτά} \trc{auta} \\ \small both women} & \makecell{\grc{αὐτώ} \trc{autō} \\ \small both of them} \\
+            \tsc{Dat/Gen} & \makecell{\grc{αὐτοῖν} \trc{autoin} \\ \small both men/s} & \makecell{\grc{αὐταῖν} \trc{autain} \\ \small both women/s} & \makecell{\grc{αὐτοῖν} \trc{autoin} \\ \small both of them/theirs} \\
+            \hline
+            \emph{\tsc{Plural}} \\
+            \tsc{Nom} & \makecell{\grc{αὐτοί} \trc{autoi} \\ \small they, the men} & \makecell{\grc{αὐταί} \trc{autai} \\ \small they, the women} & \makecell{\grc{αὐτά} \trc{auta} \\ \small they} \\
+            \tsc{Gen} & \makecell{\grc{αὐτῶν} \trc{autōn} \\ \small theirs, the men's} & \makecell{\grc{αὐτῶν} \trc{autōn} \\ \small theirs, the women's} & \makecell{\grc{αὐτῶν} \trc{autōn} \\ \small theirs} \\
+            \tsc{Dat} & \makecell{\grc{αὐτοῖς} \trc{autois} \\ \small them, the men, \\ \small men themselves} & \makecell{\grc{αὐταῖς} \trc{autais}\\ \small them, the women, \\ \small women themselves} & \makecell{\grc{αὐτοῖς} \trc{autois} \\ \small them \\ \small themselves} \\
+            \tsc{Acc} & \makecell{\grc{αὐτούς} \trc{autous} \\ \small them, the men} & \makecell{\grc{αὐτάς} \trc{autas} \\ \small them, the women} & \makecell{\grc{αὐτά} \trc{auta} \\ \small them} \\
+        \end{tabular}
+        \caption{Personal pronouns in third (intensive) person as Smyth §327, p. 92, with enhancements.}
+    \end{table}
+\end{document}

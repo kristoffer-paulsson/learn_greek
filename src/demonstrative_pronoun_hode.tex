@@ -1,0 +1,75 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt]{memoir}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{float}
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{fontspec}
+\usepackage{makecell}
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+%\setromanfont{Tinos}
+
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{1.3em}
+\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
+
+% Document
+\begin{document}
+
+    \section*{Koine Greek Demonstrative Pronouns -- \grc{ὅδε}}
+
+    ``Third-person pronouns are words such as `she,' `it,' and `they' that are used to refer to other people and things that are not being directly addressed, without naming them specifically with a noun.''
+    \linkfoot{Third-Person Pronouns}{https://www.scribbr.com/academic-writing/third-person-pronouns/}{2025-05-13}
+
+    \begin{table}[H]
+        \begin{tabular}{c|ccc}
+            \textbf{Inflection} & \textbf{Masc} & \textbf{Fem} & \textbf{Neu} \\
+            \hline
+            \emph{\tsc{Singular}} \\
+            \tsc{Nom} & \makecell{\grc{ὅδε} \trc{hode} \\ \small he that} & \makecell{\grc{ἥδε} \trc{hēde} \\ \small she that} & \makecell{\grc{τόδε} \trc{tode} \\ \small it that, this one} \\
+            \tsc{Gen} & \makecell{\grc{τοῦδε} \trc{toude} \\ \small his that} & \makecell{\grc{τῆσδε} \trc{tēsde} \\ \small hers that} & \makecell{\grc{τοῦδε} \trc{toude} \\ \small this one's} \\
+            \tsc{Dat} & \makecell{\grc{τῷδε} \trc{tōide} \\ \small him that} & \makecell{\grc{τῇδε} \trc{tēide} \\ \small her that} & \makecell{\grc{τῷδε} \trc{tōide} \\ \small it that, this one} \\
+            \tsc{Acc} & \makecell{\grc{τόνδε} \trc{tonde} \\ \small him that} & \makecell{\grc{τήνδε} \trc{tēnde} \\ \small her that} & \makecell{\grc{τόδε} \trc{tode} \\ \small it that, this one} \\
+            \hline
+            \emph{\tsc{Dual}} \\
+            \tsc{Nom/Acc} & \makecell{\grc{τώδε} \trc{tōde} \\ \small these both men} & \makecell{\grc{τώδε} \trc{tōde} \\ \small these both women} & \makecell{\grc{τώδε} \trc{tōde} \\ \small these both} \\
+            \tsc{Dat/Gen} & \makecell{\grc{τοῖνδε} \trc{toinde} \\ \small these both men/s} & \makecell{\grc{τοῖνδε} \trc{toinde} \\ \small these both women/s} & \makecell{\grc{τοῖνδε} \trc{toinde} \\ \small these both/theirs} \\
+            \hline
+            \emph{\tsc{Plural}} \\
+            \tsc{Nom} & \makecell{\grc{οἵδε} \trc{hoide} \\ \small those men} & \makecell{\grc{αἵδε} \trc{haide} \\ \small those women} & \makecell{\grc{τάδε} \trc{tade} \\ \small those} \\
+            \tsc{Gen} & \makecell{\grc{τῶνδε} \trc{tōnde} \\ \small those men's} & \makecell{\grc{τῶνδε} \trc{tōnde} \\ \small those women's} & \makecell{\grc{τῶνδε} \trc{tōnde} \\ \small these's} \\
+            \tsc{Dat} & \makecell{\grc{τοῖσδε} \trc{toisde} \\ \small these men} & \makecell{\grc{ταῖσδε} \trc{taisde}\\ \small these women} & \makecell{\grc{τοῖσδε} \trc{toisde} \\ \small these} \\
+            \tsc{Acc} & \makecell{\grc{τούσδε} \trc{tousde} \\ \small these men} & \makecell{\grc{τάσδε} \trc{tasde} \\ \small these women} & \makecell{\grc{τάδε} \trc{tade} \\ \small these} \\
+        \end{tabular}
+        \caption{Demonstrative pronouns as Smyth §333, p. 94, with enhancements.}
+    \end{table}
+\end{document}
