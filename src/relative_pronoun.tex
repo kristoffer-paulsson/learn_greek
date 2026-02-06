@@ -2,50 +2,54 @@
 %! Date = 2024-08-03
 
 % Preamble
-\documentclass[10pt]{memoir}
+\documentclass[10pt,a4paper,notitlepage]{article}
 
-% Packages
-\usepackage{amsmath}
-\usepackage{float}
-% Please add the following required packages to your document preamble:
-\usepackage{multirow}
-\usepackage[T1]{fontenc}
-\usepackage{times}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{fontspec}
-\usepackage{makecell}
+\usepackage[none]{hyphenat}  % --- NO HYPHENATION
+
+\usepackage[hyphens]{xurl}  % --- URL HYPHENATION
+\usepackage{hyperref}  % --- URL
+
+\usepackage{draftwatermark}  % --- DONT-CITE
+
+\urlstyle{same}  % --- URL
+\pagenumbering{gobble}
+\DraftwatermarkOptions{fontsize=2em,angle=0,vpos=1cm,color=black,text=Do Not Cite or Circulate}  % --- DONT-CITE
+
+\usepackage{float}  % --- TABLE
+\usepackage{makecell}  % --- TABLE
+\usepackage{enumitem}  % --- LIST
+
 
 \fontspec{Tinos}[
-    Path = .,
-    Extension = .ttf ,
-    UprightFont = *-Regular ,
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
     Scale=1,
     Ligatures=TeX
 ]
 \fontspec{Inter}[
-    Path = .,
+    Path = ./../font/i/,
     Extension = .ttf ,
     UprightFont = *-Regular ,
     Scale=1,
     Ligatures=TeX
 ]
 
-%\setromanfont{Tinos}
-
+% Commands
 \newcommand{\tsc}[1]{\textsc{#1}}
-\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand*{\grc}[1]{\fontspec{Inter}#1\rmfamily}
 \newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
 \newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
-
-\renewcommand{\arraystretch}{1.3}
-
-\usepackage{draftwatermark}
-\SetWatermarkFontSize{1.3em}
-\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
 
 % Document
 \begin{document}
 
-    \section*{Koine Greek Relative Pronouns}
+    \subsection*{Ancient Greek: Relative Pronouns}
+    \begin{itemize}[label={}, leftmargin=0]
+        \item Kristoffer E.D.\ Paulsson (2026), Independent Scholar.
+    \end{itemize}
 
     ``13.22 A relative pronoun is a noun substitute: who(m); whose; that; which; what(ever). \dots The antecedent is the word the pronoun is replacing. \dots 13.23 Relative clauses are comprised of the relative pronoun, a verb and its subject, and possibly other modifiers. The clause always starts with a relative pronoun.''
     \footnote{William D. Mounce, \emph{Greek for the Rest of Us: Second Edition} (Olive Tree Bible Software, Inc., 2025), e-book, p. 90.}
@@ -70,6 +74,15 @@
             \tsc{Dat} & \makecell{\grc{οἷς} \trc{hois} \\ \small the men whom} & \makecell{\grc{αἷς} \trc{hais}\\ \small the women whom} & \makecell{\grc{οἷς} \trc{hois} \\ \small them whom} \\
             \tsc{Acc} & \makecell{\grc{οὕς} \trc{hous} \\ \small the men whom} & \makecell{\grc{ἅς} \trc{has} \\ \small the women whom} & \makecell{\grc{ἅ} \trc{ha} \\ \small them whom} \\
         \end{tabular}
-        \caption{Relative pronouns as Smyth §338, p. 96-7, with enhancements.}
+        \caption{Compiled from standard Ancient Greek grammars enhanced with transliteration. (Smyth, 1956:96--7, \S338)}
     \end{table}
+
+    \subsection*{Reference List}
+    \begin{itemize}[label={}, leftmargin=0]
+       % \item Rydberg-Cox, J. (n.d.). \textit{LESSON XVII: Demonstrative Pronouns}. [online] A Digital Tutorial for Ancient Greek. Available at: \url{https://daedalus.umkc.edu/FirstGreekBook/JWW_FGB17.html} [Accessed 2 Feb. 2026].
+       % \item Groton, A.H.\ (2013). \textit{From Alpha to Omega: a Beginning Course in Classical Greek}. Newburyport, Massachusetts: Focus Publishing.
+        \item Smyth, H.W.\ (1956). \textit{Greek Grammar}. Cambridge, Massachusetts: Harvard University Press.
+    \end{itemize}
+
 \end{document}
+
