@@ -1,0 +1,86 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt,a4paper,notitlepage]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage[none]{hyphenat}  % --- NO HYPHENATION
+
+\usepackage[hyphens]{xurl}  % --- URL HYPHENATION
+\usepackage{hyperref}  % --- URL
+
+\usepackage{draftwatermark}  % --- DONT-CITE
+
+\urlstyle{same}  % --- URL
+\pagenumbering{gobble}
+\DraftwatermarkOptions{fontsize=2em,angle=0,vpos=1cm,color=black,text=Do Not Cite or Circulate}  % --- DONT-CITE
+
+\usepackage{float}  % --- TABLE
+\usepackage{makecell}  % --- TABLE
+\usepackage{enumitem}  % --- LIST
+
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+% Commands
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand*{\grc}[1]{\fontspec{Inter}#1\rmfamily}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+% Document
+\begin{document}
+    \subsection*{Ancient Greek: Indefinite Pronouns}
+    FIX
+
+    ``\textbf{334.} Interrogative and Indefinite Pronouns. --The interrogative pronoun \grc{τίς}\fontspec{}, \grc{τί} \fontspec{} who, which, what? \dots''
+
+    ``Interrogative pronouns are pronouns that are used to ask questions. The main English interrogative pronouns are what, which, who, whom, and whose.''
+        \linkfoot{Interrogative Pronouns}{https://www.scribbr.com/nouns-and-pronouns/interrogative-pronouns/}{2025-05-24}
+
+    \begin{table}[H]
+        \begin{tabular}{c|cc}
+            \textbf{Inflection} & \textbf{Masc/Fem} & \textbf{Neu} \\
+            \hline
+            \emph{\tsc{Singular}} \\
+            \tsc{Nom} & \makecell{\grc{τίς} \trc{tis} \\ \small who?} & \makecell{\grc{τί} \trc{ti} \\ \small which? } \\
+            \tsc{Gen} & \makecell{\grc{τίνος} \trc{tinos} \\ \small whose?} & \makecell{\grc{τίνος} \trc{tinos} \\ \small of which?} \\
+            \tsc{Dat} & \makecell{\grc{τίνι} \trc{tini} \\ \small to/for whom?} & \makecell{\grc{τίνι} \trc{tini} \\ \small to/for which?} \\
+            \tsc{Acc} & \makecell{\grc{τίνα} \trc{tina} \\ \small whom?} & \makecell{\grc{τίνα} \trc{tina} \\ \small which?} \\
+            \hline
+            \emph{\tsc{Dual}} \\
+            \tsc{Nom/Acc} & \makecell{\grc{τίνε} \trc{tine} \\ \small who(m) twos?} & \makecell{\grc{τινέ} \trc{tine} \\ \small which two?} \\
+            \tsc{Dat/Gen} & \makecell{\grc{τίνοιν} \trc{tinoin} \\ \small whose/to whom two?} & \makecell{\grc{τινοῖν} \trc{tinoin} \\ \small of/to which two?} \\
+            \hline
+            \emph{\tsc{Plural}} \\
+            \tsc{Nom} & \makecell{\grc{τίνες} \trc{tines} \\ \small who (they)?} & \makecell{\grc{τίνα} \trc{tina} \\ \small what?} \\
+            \tsc{Gen} & \makecell{\grc{τίνων} \trc{tinōn} \\ \small whose (their)?} & \makecell{\grc{τίνων} \trc{tinōn} \\ \small of what?} \\
+            \tsc{Dat} & \makecell{\grc{τίσι(ν)} \trc{tisi(n)} \\ \small to whom (them)?} & \makecell{\grc{τίσι(ν)} \trc{tisi(n)}\\ \small to/for what?} \\
+            \tsc{Acc} & \makecell{\grc{τίνας} \trc{tinas} \\ \small whom (them)?} & \makecell{\grc{τίνα} \trc{tina} \\ \small what?} \\
+        \end{tabular}
+         \caption{Compiled from standard Ancient Greek grammars enhanced with transliteration and syntactic cues. (Smyth, 1956:96, \S334)}
+     \end{table}
+
+    \subsection*{Reference List}
+    \begin{itemize}[label={}, leftmargin=0]
+        %\item Rydberg-Cox, J. (n.d.). \textit{LESSON XLVII: Personal Pronouns}. [online] A Digital Tutorial for Ancient Greek. Available at: \url{https://daedalus.umkc.edu/FirstGreekBook/JWW_FGB47.html} [Accessed 5 Feb. 2026].
+        %\item Cambridge Dictionary (2024). \textit{Yous}. [online] @CambridgeWords. Available at: \url{https://dictionary.cambridge.org/dictionary/english/yous} [Accessed 13 May 2025].
+        \item Smyth, H.W.\ (1956). \textit{Greek Grammar}. Cambridge, Massachusetts: Harvard University Press.
+    \end{itemize}
+
+\end{document}
