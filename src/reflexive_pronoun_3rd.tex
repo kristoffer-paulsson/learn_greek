@@ -1,0 +1,93 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt]{memoir}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{float}
+% Please add the following required packages to your document preamble:
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{fontspec}
+\usepackage{makecell}
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+%\setromanfont{Tinos}
+
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{1.3em}
+\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
+
+% Document
+\begin{document}
+
+    \section*{Koine Greek Reflexive Pronouns Third Person}
+    FIX
+
+    ``329. Reflexive Pronouns.—The reflexive pronouns (referring back to the subject of the sentence) are formed by compounding the stems of the personal pronouns with the oblique cases of \grc{αὐτός}\fontspec{}. In the plural both pronouns are declined separately, but the third person has also the compounded form. The nominative is excluded by the meaning. There is no dual.''
+    \linkfoot{Smyth §329}{https://www.perseus.tufts.edu/hopper/text?doc=Perseus\%3Atext\%3A1999.04.0007\%3Apart\%3D2\%3Achapter\%3D15}{2025-05-15}
+
+    \begin{table}[H]
+        \begin{tabular}{c|cccc}
+            \textbf{Person} & \multicolumn{2}{c}{\textbf{First}} & \multicolumn{2}{c}{\textbf{Second}} \\
+            \textbf{Gender} & \textbf{Masc} & \textbf{Fem} & \textbf{Masc} & \textbf{Fem} \\
+
+            \hline
+            \emph{\tsc{Singular}} & \multicolumn{2}{c}{Myself} & \multicolumn{2}{c}{Yourself} \\
+             \tsc{Nom} & \makecell{--} & \makecell{--}
+            & \makecell{--} & \makecell{--}\\
+
+            \tsc{Gen} & \makecell{\grc{ἐμαυτοῦ} \\ \trc{emautou}} & \makecell{\grc{ἐμαυτῆς} \\ \trc{emautēs}}
+            & \makecell{\grc{σεαυτοῦ} \\ \trc{seautou}} & \makecell{\grc{σεαυτῆς} \\ \trc{seautēs}}\\
+
+            \tsc{Dat} & \makecell{\grc{ἐμαυτῷ} \\ \trc{emautōi}} & \makecell{\grc{ἐμαυτῇ} \\ \trc{emautēi}}
+            & \makecell{\grc{σεαυτῷ} \\ \trc{seautōi}} & \makecell{\grc{σεαυτῇ} \\ \trc{seautēi}}\\
+
+            \tsc{Acc} & \makecell{\grc{ἐμαυτόν} \\ \trc{emauton}} & \makecell{\grc{ἐμαυτήν} \\ \trc{emautēn}}
+            & \makecell{\grc{σεαυτόν} \\ \trc{seauton}} & \makecell{\grc{σεαυτήν} \\ \trc{seautēn}}\\
+
+            \hline
+            \emph{\tsc{Dual}} & \multicolumn{2}{c}{--} & \multicolumn{2}{c}{--} \\
+
+            \hline
+            \emph{\tsc{Plural}} & \multicolumn{2}{c}{Ourselves} & \multicolumn{2}{c}{Yourselves} \\
+            \tsc{Nom} & \makecell{--} & \makecell{--}
+            & \makecell{--} & \makecell{--}\\
+
+            \tsc{Gen} & \multicolumn{2}{c}{\makecell{\grc{ἡμῶν αὐτῶν} \\ \trc{hēmōn autōn}}}
+            & \multicolumn{2}{c}{\makecell{\grc{ὑμῶν αὐτῶν} \\ \trc{hymōn autōn}}} \\
+
+            \emph{\tsc{}} & We/us men & We/us women & Yous men & Yous women \\
+            \tsc{Dat} & \makecell{\grc{ἡμῖν αὐτοῖς} \\ \trc{hēmin autōn}} & \makecell{\grc{ἡμῖν αὐταῖς} \\ \trc{hēmin autais}}
+            & \makecell{\grc{ὑμῖν αὐτοῖς} \\ \trc{hymin autois}} & \makecell{\grc{ὑμῖν αὐταῖς} \\ \trc{hymin autais}}\\
+
+            \tsc{Acc} & \makecell{\grc{ἡμᾶς αὐτούς} \\ \trc{hēmas autous}} & \makecell{\grc{ἡμᾶς αὐτάς} \\ \trc{hēmas autas}}
+            & \makecell{\grc{ὑμᾶς αὐτούς} \\ \trc{hymas autous}} & \makecell{\grc{ὑμᾶς αὐτάς} \\ \trc{hymas autas}}\\
+        \end{tabular}
+        \caption{Reflexive pronouns in first and second person after Smyth §329 p. 93, with enhancements.}
+    \end{table}
+\end{document}
