@@ -1,0 +1,80 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt,a4paper,notitlepage]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage[none]{hyphenat}  % --- NO HYPHENATION
+
+\usepackage[hyphens]{xurl}  % --- URL HYPHENATION
+\usepackage{hyperref}  % --- URL
+
+\usepackage{draftwatermark}  % --- DONT-CITE
+
+\urlstyle{same}  % --- URL
+\pagenumbering{gobble}
+\DraftwatermarkOptions{fontsize=2em,angle=0,vpos=1cm,color=black,text=Do Not Cite or Circulate}  % --- DONT-CITE
+
+\usepackage{float}  % --- TABLE
+\usepackage{makecell}  % --- TABLE
+\usepackage{enumitem}  % --- LIST
+
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+% Commands
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand*{\grc}[1]{\fontspec{Inter}#1\rmfamily}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+% Document
+\begin{document}
+
+    \subsection*{Ancient Greek: All Pronouns Listed}
+    \begin{itemize}[label={}, leftmargin=0]
+        \item Kristoffer E.D.\ Paulsson (2026), Independent Scholar.
+    \end{itemize}
+
+    \begin{itemize}
+        \item The First Personal Pronoun (Smyth, 1956:90, \S325). (?)
+        \item The Second Personal Pronoun (Smyth, 1956:90, \S325).
+        \item The Third Personal Pronoun (Smyth, 1956:90, \S325).
+        \item The Intensive Pronoun (Smyth, 1956:92, \S327).
+        \item Reflexive Pronouns (Smyth, 1956:93, \S329).
+        \item Possessive Pronouns (Smyth, 1956:93, \S330).
+        \item Reciprocal Pronoun (Smyth, 1956:94, \S331).
+        \item The Definite Article (Smyth, 1956:94, \S332).
+        \item Proximal Demonstrative Pronouns (Smyth, 1956:94, \S333).
+        \item Medial Demonstrative Pronouns (Smyth, 1956:94, \S333).
+        \item Distal Demonstrative Pronouns (Smyth, 1956:94, \S333).
+        \item Interrogative Pronouns (Smyth, 1956:95, \S334).
+        \item Indefinite Pronouns (Smyth, 1956:95, \S334).
+        \item Relative Pronouns (Smyth, 1956:96, \S338).
+        \item Indefinite or General Relative Pronoun (Smyth, 1956:97, \S339). (?)
+        \item Correlative Pronouns (Smyth, 1956:98, \S340).
+    \end{itemize}
+
+    \subsection*{Reference List}
+    \begin{itemize}[label={}, leftmargin=0]
+        %\item Ryd    \begin{itemize}[label={}, leftmargin=0]berg-Cox, J. (n.d.). \textit{LESSON XVII: Demonstrative Pronouns}. [online] A Digital Tutorial for Ancient Greek. Available at: \url{https://daedalus.umkc.edu/FirstGreekBook/JWW_FGB17.html} [Accessed 2 Feb. 2026].
+        %\item Groton, A.H.\ (2013). \textit{From Alpha to Omega: a Beginning Course in Classical Greek}. Newburyport, Massachusetts: Focus Publishing.
+        %\item Smyth, H.W.\ (1956). \textit{Greek Grammar}. Cambridge, Massachusetts: Harvard University Press.
+    \end{itemize}
+
+\end{document}
