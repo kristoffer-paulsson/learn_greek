@@ -2,17 +2,25 @@
 %! Date = 2024-08-03
 
 % Preamble
-\documentclass[10pt]{memoir}
+\documentclass[10pt,a4paper,notitlepage]{article}
 
-% Packages
-\usepackage{amsmath}
-\usepackage{float}
-% Please add the following required packages to your document preamble:
-\usepackage{multirow}
-\usepackage[T1]{fontenc}
-\usepackage{times}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{fontspec}
-\usepackage{makecell}
+\usepackage[none]{hyphenat}  % --- NO HYPHENATION
+
+\usepackage[hyphens]{xurl}  % --- URL HYPHENATION
+\usepackage{hyperref}  % --- URL
+
+\usepackage{draftwatermark}  % --- DONT-CITE
+
+\urlstyle{same}  % --- URL
+\pagenumbering{gobble}
+\DraftwatermarkOptions{fontsize=2em,angle=0,vpos=1cm,color=black,text=Do Not Cite or Circulate}  % --- DONT-CITE
+
+\usepackage{float}  % --- TABLE
+\usepackage{makecell}  % --- TABLE
+\usepackage{enumitem}  % --- LIST
+
 
 \fontspec{Tinos}[
     Path = ../../font/t/,
@@ -29,45 +37,48 @@
     Ligatures=TeX
 ]
 
-%\setromanfont{Tinos}
-
+% Commands
 \newcommand{\tsc}[1]{\textsc{#1}}
-\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand*{\grc}[1]{\fontspec{Inter}#1\rmfamily}
 \newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
 \newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
-
-\renewcommand{\arraystretch}{1.3}
-
-\usepackage{draftwatermark}
-\SetWatermarkFontSize{1.3em}
-\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
 
 % Document
 \begin{document}
 
-    \section*{Koine Greek Reflexive Pronouns First and Second Person}
+    \subsection*{Ancient Greek: Reflexive Pronouns First and Second Person}
+    \begin{itemize}[label={}, leftmargin=0]
+        \item Kristoffer E.D.\ Paulsson (2026), Independent Scholar.
+    \end{itemize}
 
-    ``329. Reflexive Pronouns.—The reflexive pronouns (referring back to the subject of the sentence) are formed by compounding the stems of the personal pronouns with the oblique cases of \grc{αὐτός}\fontspec{}. In the plural both pronouns are declined separately, but the third person has also the compounded form. The nominative is excluded by the meaning. There is no dual.''
-    \linkfoot{Smyth §329}{https://www.perseus.tufts.edu/hopper/text?doc=Perseus\%3Atext\%3A1999.04.0007\%3Apart\%3D2\%3Achapter\%3D15}{2025-05-15}
+    \begin{quote}
+    % Exact citation start
+    The reflexive pronouns (referring back to the subject of the sentence) are formed by
+   compounding the stems of the personal pronouns with the oblique cases of \grc{αὐτός}. In the plural both pronouns
+    are declined separately, but the third person has also the compounded form. The nominative is excluded by
+    the meaning. There is no dual.
+    % Exact citation stop
+    (Smyth, 1956:93, \S329)
+    \end{quote}
 
     \begin{table}[H]
         \begin{tabular}{c|cccc}
-            \textbf{Person} & \multicolumn{2}{c}{\textbf{First}} & \multicolumn{2}{c}{\textbf{Second}} \\
-            \textbf{Gender} & \textbf{Masc} & \textbf{Fem} & \textbf{Masc} & \textbf{Fem} \\
+             & \multicolumn{2}{c}{\tsc{1st}} & \multicolumn{2}{c}{\tsc{2nd}} \\
+             & \tsc{Masc} & \tsc{Fem} & \tsc{Masc} & \tsc{Fem} \\
 
             \hline
             \emph{\tsc{Singular}} & \multicolumn{2}{c}{Myself} & \multicolumn{2}{c}{Yourself} \\
              \tsc{Nom} & \makecell{--} & \makecell{--}
             & \makecell{--} & \makecell{--}\\
 
-            \tsc{Gen} & \makecell{\grc{ἐμαυτοῦ} \\ \trc{emautou}} & \makecell{\grc{ἐμαυτῆς} \\ \trc{emautēs}}
-            & \makecell{\grc{σεαυτοῦ} \\ \trc{seautou}} & \makecell{\grc{σεαυτῆς} \\ \trc{seautēs}}\\
+            \tsc{Gen} & \makecell{\grc{ἐμαυτοῦ} \trc{emautou} \\ \small he} & \makecell{\grc{ἐμαυτῆς} \trc{emautēs} \\ \small he}
+            & \makecell{\grc{σεαυτοῦ} \trc{seautou} \\ \small he} & \makecell{\grc{σεαυτῆς} \trc{seautēs} \\ \small he}\\
 
-            \tsc{Dat} & \makecell{\grc{ἐμαυτῷ} \\ \trc{emautōi}} & \makecell{\grc{ἐμαυτῇ} \\ \trc{emautēi}}
-            & \makecell{\grc{σεαυτῷ} \\ \trc{seautōi}} & \makecell{\grc{σεαυτῇ} \\ \trc{seautēi}}\\
+            \tsc{Dat} & \makecell{\grc{ἐμαυτῷ} \trc{emautōi} \\ \small he} & \makecell{\grc{ἐμαυτῇ} \trc{emautēi} \\ \small he}
+            & \makecell{\grc{σεαυτῷ} \trc{seautōi} \\ \small he} & \makecell{\grc{σεαυτῇ} \trc{seautēi} \\ \small he}\\
 
-            \tsc{Acc} & \makecell{\grc{ἐμαυτόν} \\ \trc{emauton}} & \makecell{\grc{ἐμαυτήν} \\ \trc{emautēn}}
-            & \makecell{\grc{σεαυτόν} \\ \trc{seauton}} & \makecell{\grc{σεαυτήν} \\ \trc{seautēn}}\\
+            \tsc{Acc} & \makecell{\grc{ἐμαυτόν} \trc{emauton} \\ \small he} & \makecell{\grc{ἐμαυτήν} \trc{emautēn} \\ \small he}
+            & \makecell{\grc{σεαυτόν} \trc{seauton} \\ \small he} & \makecell{\grc{σεαυτήν} \trc{seautēn} \\ \small he}\\
 
             \hline
             \emph{\tsc{Dual}} & \multicolumn{2}{c}{--} & \multicolumn{2}{c}{--} \\
@@ -77,16 +88,24 @@
             \tsc{Nom} & \makecell{--} & \makecell{--}
             & \makecell{--} & \makecell{--}\\
 
-            \tsc{Gen} & \multicolumn{2}{c}{\makecell{\grc{ἡμῶν αὐτῶν} \\ \trc{hēmōn autōn}}}
-            & \multicolumn{2}{c}{\makecell{\grc{ὑμῶν αὐτῶν} \\ \trc{hymōn autōn}}} \\
+            \tsc{Gen} & \multicolumn{2}{c}{\makecell{\grc{ἡμῶν αὐτῶν} \\ \trc{hēmōn autōn} \\ \small he}}
+            & \multicolumn{2}{c}{\makecell{\grc{ὑμῶν αὐτῶν} \\ \trc{hymōn autōn} \\ \small he}} \\
 
-            \emph{\tsc{}} & We/us men & We/us women & Yous men & Yous women \\
-            \tsc{Dat} & \makecell{\grc{ἡμῖν αὐτοῖς} \\ \trc{hēmin autōn}} & \makecell{\grc{ἡμῖν αὐταῖς} \\ \trc{hēmin autais}}
-            & \makecell{\grc{ὑμῖν αὐτοῖς} \\ \trc{hymin autois}} & \makecell{\grc{ὑμῖν αὐταῖς} \\ \trc{hymin autais}}\\
+            %\emph{\tsc{}} & We/us men & We/us women & Yous men & Yous women \\
+            \tsc{Dat} & \makecell{\grc{ἡμῖν αὐτοῖς} \\ \trc{hēmin autōn} \\ \small he} & \makecell{\grc{ἡμῖν αὐταῖς} \\ \trc{hēmin autais} \\ \small he}
+            & \makecell{\grc{ὑμῖν αὐτοῖς} \\ \trc{hymin autois} \\ \small he} & \makecell{\grc{ὑμῖν αὐταῖς} \\ \trc{hymin autais} \\ \small he}\\
 
-            \tsc{Acc} & \makecell{\grc{ἡμᾶς αὐτούς} \\ \trc{hēmas autous}} & \makecell{\grc{ἡμᾶς αὐτάς} \\ \trc{hēmas autas}}
-            & \makecell{\grc{ὑμᾶς αὐτούς} \\ \trc{hymas autous}} & \makecell{\grc{ὑμᾶς αὐτάς} \\ \trc{hymas autas}}\\
+            \tsc{Acc} & \makecell{\grc{ἡμᾶς αὐτούς} \\ \trc{hēmas autous} \\ \small he} & \makecell{\grc{ἡμᾶς αὐτάς} \\ \trc{hēmas autas} \\ \small he}
+            & \makecell{\grc{ὑμᾶς αὐτούς} \\ \trc{hymas autous} \\ \small he} & \makecell{\grc{ὑμᾶς αὐτάς} \\ \trc{hymas autas} \\ \small he}\\
         \end{tabular}
         \caption{Reflexive pronouns in first and second person after Smyth §329 p. 93, with enhancements.}
     \end{table}
+
+    \subsection*{Reference List}
+    \begin{itemize}[label={}, leftmargin=0]
+        %\item Rydberg-Cox, J. (n.d.). \textit{LESSON XVII: Demonstrative Pronouns}. [online] A Digital Tutorial for Ancient Greek. Available at: \url{https://daedalus.umkc.edu/FirstGreekBook/JWW_FGB17.html} [Accessed 2 Feb. 2026].
+        %\item Groton, A.H.\ (2013). \textit{From Alpha to Omega: a Beginning Course in Classical Greek}. Newburyport, Massachusetts: Focus Publishing.
+        \item Smyth, H.W.\ (1956). \textit{Greek Grammar}. Cambridge, Massachusetts: Harvard University Press.
+    \end{itemize}
+
 \end{document}
