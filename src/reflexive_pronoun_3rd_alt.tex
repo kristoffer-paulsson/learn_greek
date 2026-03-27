@@ -1,0 +1,106 @@
+%! Author = kristofferpaulsson
+%! Date = 2024-08-03
+
+% Preamble
+\documentclass[10pt,a4paper,notitlepage]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage[none]{hyphenat}  % --- NO HYPHENATION
+
+\usepackage[hyphens]{xurl}  % --- URL HYPHENATION
+\usepackage{hyperref}  % --- URL
+
+\usepackage{draftwatermark}  % --- DONT-CITE
+
+\urlstyle{same}  % --- URL
+\pagenumbering{gobble}
+\DraftwatermarkOptions{fontsize=2em,angle=0,vpos=1cm,color=black,text=Do Not Cite or Circulate}  % --- DONT-CITE
+
+\usepackage{float}  % --- TABLE
+\usepackage{makecell}  % --- TABLE
+\usepackage{enumitem}  % --- LIST
+
+
+\fontspec{Tinos}[
+    Path = ../../font/t/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    Scale=1,
+    Ligatures=TeX
+]
+\fontspec{Inter}[
+    Path = ./../font/i/,
+    Extension = .ttf ,
+    UprightFont = *-Regular ,
+    Scale=1,
+    Ligatures=TeX
+]
+
+% Commands
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand*{\grc}[1]{\fontspec{Inter}#1\rmfamily}
+\newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
+\newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
+
+% Document
+\begin{document}
+
+    \subsection*{Ancient Greek: Reflexive Pronouns in Third Person (Alternative)}
+    \begin{itemize}[label={}, leftmargin=0]
+        \item Kristoffer E.D.\ Paulsson (2026), Independent Scholar.
+    \end{itemize}
+
+    %``329. Reflexive Pronouns.—The reflexive pronouns (referring back to the subject of the sentence) are formed by compounding the stems of the personal pronouns with the oblique cases of \grc{αὐτός}\fontspec{}. In the plural both pronouns are declined separately, but the third person has also the compounded form. The nominative is excluded by the meaning. There is no dual.''
+    %\linkfoot{Smyth §329}{https://www.perseus.tufts.edu/hopper/text?doc=Perseus\%3Atext\%3A1999.04.0007\%3Apart\%3D2\%3Achapter\%3D15}{2025-05-15}
+
+    \begin{table}[H]
+        \begin{tabular}{c|ccc|c}
+            & \multicolumn{3}{c|}{Sexus} & Genus \\
+            & \tsc{Masc} & \tsc{Fem} & \tsc{Neu} & \tsc{M. F. N.} \\
+            \hline
+            \emph{\tsc{Singular}} & & & & \\
+            \tsc{Nom} & -- & -- & -- & -- \\
+            \tsc{Gen} & \makecell{\grc{ἑαυτοῦ} \trc{heautou}, \\ \grc{αὐτοῦ} \trc{autou} \\ \small of himself}
+                    & \makecell{\grc{ἑαυτῆς} \trc{heautēs}, \\ \grc{αὐτῆς} \trc{autēs} \\ \small of herself}
+                    & \makecell{\grc{ἑαυτοῦ} \trc{heautou}, \\ \grc{αὐτοῦ} \trc{autou} \\ \small of oneself}
+                    & \makecell{( * ) \\ \small of itself} \\
+            \tsc{Dat} & \makecell{\grc{ἑαυτῷ} \trc{heautōi}, \\ \grc{αὐτῷ} \trc{autōi} \\ \small to/for himself}
+                    & \makecell{\grc{ἑαυτῇ} \trc{heautēi}, \\ \grc{αὐτῇ} \trc{autēi} \\ \small to/for herself}
+                    & \makecell{\grc{ἑαυτῷ} \trc{heautōi}, \\ \grc{αὐτῷ} \trc{autōi} \\ \small to/for oneself}
+                    & \makecell{( * ) \\ \small to/for itself} \\
+            \tsc{Acc} & \makecell{\grc{ἑαυτόν} \trc{heauton}, \\ \grc{αὐτόν} \trc{auton} \\ \small himself}
+                    & \makecell{\grc{ἑαυτήν} \trc{heautēn}, \\ \grc{αὐτήν} \trc{autēn} \\ \small herself}
+                    & \makecell{\grc{ἑαυτό} \trc{heauto}, \\ \grc{αὐτό} \trc{auto} \\ \small oneself}
+                    & \makecell{( * ) \\ \small itself} \\
+            \hline
+            \emph{\tsc{Dual}} & -- & -- & -- & -- \\
+            \hline
+            \emph{\tsc{Plural}} & & & & \\
+            \tsc{Nom} & -- & -- & -- & -- \\
+            \tsc{Gen} & \makecell{\grc{ἑαυτῶν} \trc{heautōn}, \\ \grc{σφῶν αὐτῶν} \trc{sphōn autōn} \\ \small of themselves (m.)}
+                    & \makecell{\grc{ἑαυτῶν} \trc{heautōn}, \\ \grc{σφῶν αὐτῶν} \trc{sphōn autōn} \\ \small of themelves (f.)}
+                    & \makecell{\grc{ἑαυτῶν} \trc{heautōn}, \\ \grc{σφῶν αὐτῶν} \trc{sphōn autōn} \\ \small of themelves (n.)}
+                    & \makecell{( * ) \\ \small of these items} \\
+            \tsc{Dat} & \makecell{\grc{ἑαυτοῖς} \trc{heautois}, \\ \grc{σφίσιν αὐτοῖς} \trc{sphisin autois} \\ \small to/for themelves (m.)}
+                    & \makecell{\grc{ἑαυταῖς} \trc{heautais}, \\ \grc{σφίσιν αὐταῖς} \trc{sphisin autais} \\ \small to/for themelves (f.)}
+                    & \makecell{\grc{ἑαυτοῖς} \trc{heautois} \\ \small to/for themelves (n.)}
+                    & \makecell{( * ) \\ \small to/for these items} \\
+            \tsc{Acc} & \makecell{\grc{ἑαυτούς} \trc{heautous}, \\ \grc{σφᾶς αὐτούς} \trc{sphas autous} \\ \small themelves (m.)}
+                    & \makecell{\grc{ἑαυτάς} \trc{heautas}, \\ \grc{σφᾶς αὐτάς} \trc{sphas autas} \\ \small themelves (f.)}
+                    & \makecell{\grc{ἑαυτά} \trc{heauta} \\ \small themelves (n.)}
+                    & \makecell{( * ) \\ \small these items} \\
+        \end{tabular}
+         \caption{Compiled from standard Ancient Greek grammars enhanced with transliteration and cues.
+            Assume gender over sex except when the antecedent is a person. Demonstrating \emph{intensive} use.
+             (Smyth, 1956:92, \S327)}
+     \end{table}
+
+    \subsection*{Reference List}
+    \begin{itemize}[label={}, leftmargin=0]
+        \item Rydberg-Cox, J. (n.d.). \textit{LESSON XLVIII: Reflexive, Reciprocal, and Possessive Pronouns}. [online] A Digital Tutorial for Ancient Greek. Available at: \url{https://daedalus.umkc.edu/FirstGreekBook/JWW_FGB48.html} [Accessed 26 Mar. 2026].
+        %\item Cambridge Dictionary (2024). \textit{Yous}. [online] @CambridgeWords. Available at: \url{https://dictionary.cambridge.org/dictionary/english/yous} [Accessed 13 May 2025].
+        \item Smyth, H.W.\ (1956). \textit{Greek Grammar}. Cambridge, Massachusetts: Harvard University Press.
+    \end{itemize}
+
+\end{document}
