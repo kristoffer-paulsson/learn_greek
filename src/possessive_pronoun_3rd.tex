@@ -2,17 +2,25 @@
 %! Date = 2024-08-03
 
 % Preamble
-\documentclass[10pt]{memoir}
+\documentclass[10pt,a4paper,notitlepage]{article}
 
-% Packages
-\usepackage{amsmath}
-\usepackage{float}
-% Please add the following required packages to your document preamble:
-\usepackage{multirow}
-\usepackage[T1]{fontenc}
-\usepackage{times}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{fontspec}
-\usepackage{makecell}
+\usepackage[none]{hyphenat}  % --- NO HYPHENATION
+
+\usepackage[hyphens]{xurl}  % --- URL HYPHENATION
+\usepackage{hyperref}  % --- URL
+
+\usepackage{draftwatermark}  % --- DONT-CITE
+
+\urlstyle{same}  % --- URL
+\pagenumbering{gobble}
+\DraftwatermarkOptions{fontsize=2em,angle=0,vpos=1cm,color=black,text=Do Not Cite or Circulate}  % --- DONT-CITE
+
+\usepackage{float}  % --- TABLE
+\usepackage{makecell}  % --- TABLE
+\usepackage{enumitem}  % --- LIST
+
 
 \fontspec{Tinos}[
     Path = ../../font/t/,
@@ -29,64 +37,75 @@
     Ligatures=TeX
 ]
 
-%\setromanfont{Tinos}
-
+% Commands
 \newcommand{\tsc}[1]{\textsc{#1}}
-\newcommand{\grc}[1]{\fontspec{Inter}#1}
+\newcommand*{\grc}[1]{\fontspec{Inter}#1\rmfamily}
 \newcommand{\trc}[1]{\textit{\fontspec{Tinos}#1}}
 \newcommand{\linkfoot}[3]{\footnote{\emph{#1}, s.v. ``{#2},'' accessed \printdate{#3}.}}
 
-\renewcommand{\arraystretch}{1.3}
-
-\usepackage{draftwatermark}
-\SetWatermarkFontSize{1.3em}
-\DraftwatermarkOptions{angle=0,vpos=1.5cm,color=black,text=Do Not Cite or Circulate}
-
 % Document
 \begin{document}
+    \subsection*{Ancient Greek: Possessive Pronouns Third Person}
+    \begin{itemize}[label={}, leftmargin=0]
+        \item Kristoffer E.D.\ Paulsson (2026), Independent Scholar.
+    \end{itemize}
+    An intensive pronoun emphasizes a noun or pronoun by underscoring its personal or exclusive action, reinforcing
+    the identity of an already-mentioned referent without introducing a new one.
 
-    \section*{Koine Greek Possessive Pronouns}
+    \begin{quote}
+    % Exact citation start
+    \grc{αὐτός} is a definite adjective and a pronoun. It has three meanings:
+    \textbf{a.} \textit{self:} standing by itself in the nominative, \grc{αὐτὸς} \grc{ὁ} \grc{ἀνήρ} or
+    \grc{ὁ} \grc{ἀνὴρ} \grc{αὐτός} the man himself, or (without the article) in agreement with a substantive or
+    pronoun; as \grc{ἀνδρὸς} \grc{αὐτοῦ} of the man himself.
+    \textbf{b.} \textit{him, her, it, them}, etc.: standing by itself in an oblique case (never in the nominative).
+    The oblique cases of \grc{αὐτός} are generally used instead of \grc{οὗ}, \grc{οἷ}, \grc{ἕ}, etc., as
+    \grc{ὁ} \grc{πατὴρ} \grc{αὐτοῦ} his father, \grc{οἱ} \grc{παῖδες} \grc{αὐτῶν} their children.
+    \textbf{c.} \textit{same:} when it is preceded by the article in any case: \grc{ὁ} \grc{αὐτὸς} \grc{ἀνήρ}
+    the same man, \grc{τοῦ} \grc{αὐτοῦ} of the same man.
+    % Exact citation stop
+    (Smyth, 1956:92, \S328)
+    \end{quote}
 
-    ``329. Reflexive Pronouns.—The reflexive pronouns (referring back to the subject of the sentence) are formed by compounding the stems of the personal pronouns with the oblique cases of \grc{αὐτός}\fontspec{}. In the plural both pronouns are declined separately, but the third person has also the compounded form. The nominative is excluded by the meaning. There is no dual.''
-    \linkfoot{Smyth §329}{https://www.perseus.tufts.edu/hopper/text?doc=Perseus\%3Atext\%3A1999.04.0007\%3Apart\%3D2\%3Achapter\%3D15}{2025-05-15}
+    In Ancient Greek, the intensive pronoun exhibits three functions determined by syntactic context:
+    \emph{intensive}, emphasizing identity (“himself”); \emph{identical}, meaning “the same”; and \emph{pronominal},
+    functioning as a third-person pronoun (“him,” “her,” “it”).
 
     \begin{table}[H]
-        \begin{tabular}{c|cccc}
-            \textbf{Person} & \multicolumn{2}{c}{\textbf{First}} & \multicolumn{2}{c}{\textbf{Second}} \\
-            \textbf{Gender} & \textbf{Masc} & \textbf{Fem} & \textbf{Masc} & \textbf{Fem} \\
+        \begin{tabular}{c|ccc|c}
+            & \multicolumn{3}{c|}{Sexus} & Genus \\
+            & \tsc{Masc} & \tsc{Fem} & \tsc{Neu} & \tsc{M. F. N.} \\
+            \hline
+            \emph{\tsc{Singular}} & & & & \\
+            \tsc{Nom} & \makecell{\grc{αὐτός} \trc{autos} \\ \small he himself} & \makecell{\grc{αὐτή} \trc{autē} \\ \small she herself} & \makecell{\grc{αὐτό} \trc{auto} \\ \small that one oneself} & \makecell{( * ) \\ \small it itself} \\
+            \tsc{Gen} & \makecell{\grc{αὐτοῦ} \trc{autou} \\ \small of him} & \makecell{\grc{αὐτῆς} \trc{autēs} \\ \small of her} & \makecell{\grc{αὐτοῦ} \trc{autou} \\ \small of that one} & \makecell{( * ) \\ \small of it} \\
+            \tsc{Dat} & \makecell{\grc{αὐτῷ} \trc{autōi} \\ \small to/for him} & \makecell{\grc{αὐτῇ} \trc{autēi} \\ \small to/for her} & \makecell{\grc{αὐτῷ} \trc{autōi} \\ \small to/for that one} & \makecell{( * ) \\ \small to/for it} \\
+            \tsc{Acc} & \makecell{\grc{αὐτόν} \trc{auton} \\ \small him} & \makecell{\grc{αὐτήν} \trc{autēn} \\ \small her} & \makecell{\grc{αὐτό} \trc{auto} \\ \small that one} & \makecell{( * ) \\ \small it} \\
+            \tsc{Voc} & \makecell{\grc{αὐτός} \trc{autos} \\ \small he himself} & \makecell{\grc{αὐτή} \trc{autē} \\ \small she herself} & \makecell{\grc{αὐτό} \trc{auto} \\ \small that one oneself} & \makecell{( * ) \\ \small it itself} \\
 
             \hline
-            \emph{\tsc{Singular}} & \multicolumn{2}{c}{Myself} & \multicolumn{2}{c}{Yourself} \\
-             \tsc{Nom} & \makecell{--} & \makecell{--}
-            & \makecell{--} & \makecell{--}\\
-
-            \tsc{Gen} & \makecell{\grc{ἐμαυτοῦ} \\ \trc{emautou}} & \makecell{\grc{ἐμαυτῆς} \\ \trc{emautēs}}
-            & \makecell{\grc{σεαυτοῦ} \\ \trc{seautou}} & \makecell{\grc{σεαυτῆς} \\ \trc{seautēs}}\\
-
-            \tsc{Dat} & \makecell{\grc{ἐμαυτῷ} \\ \trc{emautōi}} & \makecell{\grc{ἐμαυτῇ} \\ \trc{emautēi}}
-            & \makecell{\grc{σεαυτῷ} \\ \trc{seautōi}} & \makecell{\grc{σεαυτῇ} \\ \trc{seautēi}}\\
-
-            \tsc{Acc} & \makecell{\grc{ἐμαυτόν} \\ \trc{emauton}} & \makecell{\grc{ἐμαυτήν} \\ \trc{emautēn}}
-            & \makecell{\grc{σεαυτόν} \\ \trc{seauton}} & \makecell{\grc{σεαυτήν} \\ \trc{seautēn}}\\
-
+            \emph{\tsc{Dual}} & & & & \\
+            \tsc{Nom/Acc/Voc} & \makecell{\grc{αὐτώ} \trc{autō} \\ \small both men themselves} & \makecell{\grc{αὐτά} \trc{auta} \\ \small both women themselves} & \makecell{\grc{αὐτώ} \trc{autō} \\ \small both two themselves} & \makecell{( * ) \\ \small both items themselves} \\
+            \tsc{Dat/Gen} & \makecell{\grc{αὐτοῖν} \trc{autoin} \\ \small of/to/for both men} & \makecell{\grc{αὐταῖν} \trc{autain} \\ \small of/to/for both women} & \makecell{\grc{αὐτοῖν} \trc{autoin} \\ \small of/to/for both two} & \makecell{( * ) \\ \small of/to/for both items} \\
             \hline
-            \emph{\tsc{Dual}} & \multicolumn{2}{c}{--} & \multicolumn{2}{c}{--} \\
-
-            \hline
-            \emph{\tsc{Plural}} & \multicolumn{2}{c}{Ourselves} & \multicolumn{2}{c}{Yourselves} \\
-            \tsc{Nom} & \makecell{--} & \makecell{--}
-            & \makecell{--} & \makecell{--}\\
-
-            \tsc{Gen} & \multicolumn{2}{c}{\makecell{\grc{ἡμῶν αὐτῶν} \\ \trc{hēmōn autōn}}}
-            & \multicolumn{2}{c}{\makecell{\grc{ὑμῶν αὐτῶν} \\ \trc{hymōn autōn}}} \\
-
-            \emph{\tsc{}} & We/us men & We/us women & Yous men & Yous women \\
-            \tsc{Dat} & \makecell{\grc{ἡμῖν αὐτοῖς} \\ \trc{hēmin autōn}} & \makecell{\grc{ἡμῖν αὐταῖς} \\ \trc{hēmin autais}}
-            & \makecell{\grc{ὑμῖν αὐτοῖς} \\ \trc{hymin autois}} & \makecell{\grc{ὑμῖν αὐταῖς} \\ \trc{hymin autais}}\\
-
-            \tsc{Acc} & \makecell{\grc{ἡμᾶς αὐτούς} \\ \trc{hēmas autous}} & \makecell{\grc{ἡμᾶς αὐτάς} \\ \trc{hēmas autas}}
-            & \makecell{\grc{ὑμᾶς αὐτούς} \\ \trc{hymas autous}} & \makecell{\grc{ὑμᾶς αὐτάς} \\ \trc{hymas autas}}\\
+            \emph{\tsc{Plural}} & & & & \\
+            \tsc{Nom/Voc} & \makecell{\grc{αὐτοί} \trc{autoi} \\ \small they (m.) themselves} & \makecell{\grc{αὐταί} \trc{autai} \\ \small they (f.) themselves} & \makecell{\grc{αὐτά} \trc{auta} \\ \small they (n.) themselves} & \makecell{( * ) \\ \small these items themselves} \\
+            \tsc{Gen} & \makecell{\grc{αὐτῶν} \trc{autōn} \\ \small of them (m.)} & \makecell{\grc{αὐτῶν} \trc{autōn} \\ \small of them (f.)} & \makecell{\grc{αὐτῶν} \trc{autōn} \\ \small of them (n.)} & \makecell{( * ) \\ \small of these items} \\
+            \tsc{Dat} & \makecell{\grc{αὐτοῖς} \trc{autois} \\ \small to/for them (m.)} & \makecell{\grc{αὐταῖς} \trc{autais}\\ \small to/for them (f.)} & \makecell{\grc{αὐτοῖς} \trc{autois} \\ \small to/for them (n.)} & \makecell{( * ) \\ \small to/for these items} \\
+            \tsc{Acc} & \makecell{\grc{αὐτούς} \trc{autous} \\ \small them (m.)} & \makecell{\grc{αὐτάς} \trc{autas} \\ \small them (f.)} & \makecell{\grc{αὐτά} \trc{auta} \\ \small them (n.)} & \makecell{( * ) \\ \small these items} \\
         \end{tabular}
-        \caption{Reflexive pronouns in first and second person after Smyth §329 p. 93, with enhancements.}
-    \end{table}
+         \caption{Compiled from standard Ancient Greek grammars enhanced with transliteration and cues.
+            Assume gender over sex except when the antecedent is a person. Demonstrating \emph{intensive} use.
+             (Smyth, 1956:92, \S327)}
+     \end{table}
+
+    \subsection*{Reference List}
+    \begin{itemize}[label={}, leftmargin=0]
+        % The self pronouns is listed under demonstrative pronouns in Rydberg-Cox
+        \item Rydberg-Cox, J. (n.d.). \textit{LESSON XVII: Demonstrative Pronouns}. [online] A Digital Tutorial for Ancient Greek. Available at: \url{https://daedalus.umkc.edu/FirstGreekBook/JWW_FGB17.html} [Accessed 5 Feb. 2026].
+        %\item Rydberg-Cox, J. (n.d.). \textit{LESSON XLVII: Personal Pronouns}. [online] A Digital Tutorial for Ancient Greek. Available at: \url{https://daedalus.umkc.edu/FirstGreekBook/JWW_FGB47.html} [Accessed 5 Feb. 2026].
+        %\item Cambridge Dictionary (2024). \textit{Yous}. [online] @CambridgeWords. Available at: \url{https://dictionary.cambridge.org/dictionary/english/yous} [Accessed 13 May 2025].
+        \item Smyth, H.W.\ (1956). \textit{Greek Grammar}. Cambridge, Massachusetts: Harvard University Press.
+    \end{itemize}
+
 \end{document}
